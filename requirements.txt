@@ -1,0 +1,5 @@
+keras-gpu
+tensorflow-gpu
+pandas
+nltk
+tweepy
