@@ -19,7 +19,7 @@ api = tweepy.API(auth)
 twitterUser= 'dprk_news'
 
 minimumLength=5
-maxTweets=300 #per user
+maxTweets=200 #per user
 ###############################################
 
 
@@ -30,11 +30,15 @@ print("Extracting data from @",twitterUser,":::::::::::")
 print("")
 
 tweetlist=[]
-for i,status in enumerate(tweepy.Cursor(api.user_timeline, screen_name='@'+twitterUser, tweet_mode="extended").items()):
+tweets = api.user_timeline(screen_name=twitterUser,
+                           count=maxTweets,
+                           include_rts = False,
+                           tweet_mode = 'extended'
+                           )
+#for i,status in enumerate(tweepy.Cursor(api.user_timeline, screen_name='@'+twitterUser, tweet_mode="extended").items()):
+for i,status in enumerate(tweets):
     tweet=status.full_text
     if len(tweet)>minimumLength:
-      if not status.retweeted and ('RT @' not in tweet):
-        if i<maxTweets:
           tweetlist.append(tweet)
           if i<maxPrint:
             print(tweet)
