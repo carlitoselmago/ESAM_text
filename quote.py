@@ -267,6 +267,8 @@ else:
 
     model.summary()
 
+    ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
     #TRAIN MODEL, target loss is something around 0.02 less is worse beacause overfitting :::::::::::::::::::::::::::::::::::::::::::::::::::::::
     # TIP: if you don't reach something below 0.9 in epoch 100 your train data is probably too small
     model.fit([x], y,
