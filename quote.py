@@ -5,6 +5,7 @@ import re
 import sys
 import csv
 import os.path
+import time
 
 import tensorflow as tf
 from tensorflow import keras
@@ -64,7 +65,9 @@ if not os.path.isfile(csv_file):
               #quotes.append(tweet)
               if i<maxPrint:
                 print(tweet)
+         #time.sleep(0.1)
       print("user total tweets ",len(rawquotes[u]))
+      time.sleep(2)
 
 
 #CLEAN UP DATA :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
