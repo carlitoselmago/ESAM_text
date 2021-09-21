@@ -1,5 +1,5 @@
 #INSTALLATION WITH PIP
-pip install pyo
+# pip install pyo
 
 from pyo import *
 from time import sleep
