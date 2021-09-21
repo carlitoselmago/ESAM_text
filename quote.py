@@ -17,6 +17,9 @@ from keras.models import model_from_json
 from keras.layers import Input, Activation, Dense, Dropout
 from keras.layers import LSTM, Bidirectional, GRU
 
+import nltk
+nltk.download('punkt')
+
 dataCached=False
 
 csv_file = "quotes.csv"
