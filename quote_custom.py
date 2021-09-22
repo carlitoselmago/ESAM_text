@@ -128,11 +128,11 @@ else:
     csv.field_size_limit(100000000)
     f = open("quotes.csv", "r",encoding='utf-8')
     allquotes=f.read()
-    allquotes=re.sub(r'\s+', '. ', allquotes)
+    allquotes=re.sub(r'\s+', ' ', allquotes)
     allquotes = textwrap.wrap(allquotes, 140, break_long_words=False)
     #allquotes = allquotes.split(".")
     for i,q in enumerate(allquotes):
-        allquotes[i]=q+ '\n'
+        allquotes[i]=q#+ '\n'
     #print("ALL QUOTES",allquotes)
     dataCached=True
 
@@ -278,7 +278,7 @@ else:
     #TRAIN MODEL, target loss is something around 0.02 less is worse beacause overfitting :::::::::::::::::::::::::::::::::::::::::::::::::::::::
     # TIP: if you don't reach something below 0.9 in epoch 100 your train data is probably too small
     model.fit([x], y,
-             batch_size=100,
+             batch_size=1000,
               epochs= 100,
               callbacks=[PredictionCallback()]
 
